@@ -10,33 +10,128 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AvisoLegalRouteImport } from './routes/aviso-legal'
+import { Route as ComoLlegarRouteImport } from './routes/como-llegar'
+import { Route as ConsejosRouteImport } from './routes/consejos'
+import { Route as CookiesRouteImport } from './routes/cookies'
+import { Route as DondeDormirRouteImport } from './routes/donde-dormir'
+import { Route as PrivacidadRouteImport } from './routes/privacidad'
+import { Route as QueVerYHacerRouteImport } from './routes/que-ver-y-hacer'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AvisoLegalRoute = AvisoLegalRouteImport.update({
+  id: '/aviso-legal',
+  path: '/aviso-legal',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ComoLlegarRoute = ComoLlegarRouteImport.update({
+  id: '/como-llegar',
+  path: '/como-llegar',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConsejosRoute = ConsejosRouteImport.update({
+  id: '/consejos',
+  path: '/consejos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CookiesRoute = CookiesRouteImport.update({
+  id: '/cookies',
+  path: '/cookies',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DondeDormirRoute = DondeDormirRouteImport.update({
+  id: '/donde-dormir',
+  path: '/donde-dormir',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacidadRoute = PrivacidadRouteImport.update({
+  id: '/privacidad',
+  path: '/privacidad',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const QueVerYHacerRoute = QueVerYHacerRouteImport.update({
+  id: '/que-ver-y-hacer',
+  path: '/que-ver-y-hacer',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/aviso-legal': typeof AvisoLegalRoute
+  '/como-llegar': typeof ComoLlegarRoute
+  '/consejos': typeof ConsejosRoute
+  '/cookies': typeof CookiesRoute
+  '/donde-dormir': typeof DondeDormirRoute
+  '/privacidad': typeof PrivacidadRoute
+  '/que-ver-y-hacer': typeof QueVerYHacerRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/aviso-legal': typeof AvisoLegalRoute
+  '/como-llegar': typeof ComoLlegarRoute
+  '/consejos': typeof ConsejosRoute
+  '/cookies': typeof CookiesRoute
+  '/donde-dormir': typeof DondeDormirRoute
+  '/privacidad': typeof PrivacidadRoute
+  '/que-ver-y-hacer': typeof QueVerYHacerRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/aviso-legal': typeof AvisoLegalRoute
+  '/como-llegar': typeof ComoLlegarRoute
+  '/consejos': typeof ConsejosRoute
+  '/cookies': typeof CookiesRoute
+  '/donde-dormir': typeof DondeDormirRoute
+  '/privacidad': typeof PrivacidadRoute
+  '/que-ver-y-hacer': typeof QueVerYHacerRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/aviso-legal'
+    | '/como-llegar'
+    | '/consejos'
+    | '/cookies'
+    | '/donde-dormir'
+    | '/privacidad'
+    | '/que-ver-y-hacer'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/aviso-legal'
+    | '/como-llegar'
+    | '/consejos'
+    | '/cookies'
+    | '/donde-dormir'
+    | '/privacidad'
+    | '/que-ver-y-hacer'
+  id:
+    | '__root__'
+    | '/'
+    | '/aviso-legal'
+    | '/como-llegar'
+    | '/consejos'
+    | '/cookies'
+    | '/donde-dormir'
+    | '/privacidad'
+    | '/que-ver-y-hacer'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AvisoLegalRoute: typeof AvisoLegalRoute
+  ComoLlegarRoute: typeof ComoLlegarRoute
+  ConsejosRoute: typeof ConsejosRoute
+  CookiesRoute: typeof CookiesRoute
+  DondeDormirRoute: typeof DondeDormirRoute
+  PrivacidadRoute: typeof PrivacidadRoute
+  QueVerYHacerRoute: typeof QueVerYHacerRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +143,67 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/aviso-legal': {
+      id: '/aviso-legal'
+      path: '/aviso-legal'
+      fullPath: '/aviso-legal'
+      preLoaderRoute: typeof AvisoLegalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/como-llegar': {
+      id: '/como-llegar'
+      path: '/como-llegar'
+      fullPath: '/como-llegar'
+      preLoaderRoute: typeof ComoLlegarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/consejos': {
+      id: '/consejos'
+      path: '/consejos'
+      fullPath: '/consejos'
+      preLoaderRoute: typeof ConsejosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cookies': {
+      id: '/cookies'
+      path: '/cookies'
+      fullPath: '/cookies'
+      preLoaderRoute: typeof CookiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/donde-dormir': {
+      id: '/donde-dormir'
+      path: '/donde-dormir'
+      fullPath: '/donde-dormir'
+      preLoaderRoute: typeof DondeDormirRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacidad': {
+      id: '/privacidad'
+      path: '/privacidad'
+      fullPath: '/privacidad'
+      preLoaderRoute: typeof PrivacidadRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/que-ver-y-hacer': {
+      id: '/que-ver-y-hacer'
+      path: '/que-ver-y-hacer'
+      fullPath: '/que-ver-y-hacer'
+      preLoaderRoute: typeof QueVerYHacerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AvisoLegalRoute: AvisoLegalRoute,
+  ComoLlegarRoute: ComoLlegarRoute,
+  ConsejosRoute: ConsejosRoute,
+  CookiesRoute: CookiesRoute,
+  DondeDormirRoute: DondeDormirRoute,
+  PrivacidadRoute: PrivacidadRoute,
+  QueVerYHacerRoute: QueVerYHacerRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
