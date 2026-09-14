@@ -10,33 +10,80 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ComoLlegarRouteImport } from './routes/como-llegar'
+import { Route as ConsejosRouteImport } from './routes/consejos'
+import { Route as DondeDormirRouteImport } from './routes/donde-dormir'
+import { Route as QueVerYHacerRouteImport } from './routes/que-ver-y-hacer'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ComoLlegarRoute = ComoLlegarRouteImport.update({
+  id: '/como-llegar',
+  path: '/como-llegar',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConsejosRoute = ConsejosRouteImport.update({
+  id: '/consejos',
+  path: '/consejos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DondeDormirRoute = DondeDormirRouteImport.update({
+  id: '/donde-dormir',
+  path: '/donde-dormir',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const QueVerYHacerRoute = QueVerYHacerRouteImport.update({
+  id: '/que-ver-y-hacer',
+  path: '/que-ver-y-hacer',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/como-llegar': typeof ComoLlegarRoute
+  '/consejos': typeof ConsejosRoute
+  '/donde-dormir': typeof DondeDormirRoute
+  '/que-ver-y-hacer': typeof QueVerYHacerRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/como-llegar': typeof ComoLlegarRoute
+  '/consejos': typeof ConsejosRoute
+  '/donde-dormir': typeof DondeDormirRoute
+  '/que-ver-y-hacer': typeof QueVerYHacerRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/como-llegar': typeof ComoLlegarRoute
+  '/consejos': typeof ConsejosRoute
+  '/donde-dormir': typeof DondeDormirRoute
+  '/que-ver-y-hacer': typeof QueVerYHacerRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    '/' | '/como-llegar' | '/consejos' | '/donde-dormir' | '/que-ver-y-hacer'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/como-llegar' | '/consejos' | '/donde-dormir' | '/que-ver-y-hacer'
+  id:
+    | '__root__'
+    | '/'
+    | '/como-llegar'
+    | '/consejos'
+    | '/donde-dormir'
+    | '/que-ver-y-hacer'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ComoLlegarRoute: typeof ComoLlegarRoute
+  ConsejosRoute: typeof ConsejosRoute
+  DondeDormirRoute: typeof DondeDormirRoute
+  QueVerYHacerRoute: typeof QueVerYHacerRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +95,43 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/como-llegar': {
+      id: '/como-llegar'
+      path: '/como-llegar'
+      fullPath: '/como-llegar'
+      preLoaderRoute: typeof ComoLlegarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/consejos': {
+      id: '/consejos'
+      path: '/consejos'
+      fullPath: '/consejos'
+      preLoaderRoute: typeof ConsejosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/donde-dormir': {
+      id: '/donde-dormir'
+      path: '/donde-dormir'
+      fullPath: '/donde-dormir'
+      preLoaderRoute: typeof DondeDormirRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/que-ver-y-hacer': {
+      id: '/que-ver-y-hacer'
+      path: '/que-ver-y-hacer'
+      fullPath: '/que-ver-y-hacer'
+      preLoaderRoute: typeof QueVerYHacerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ComoLlegarRoute: ComoLlegarRoute,
+  ConsejosRoute: ConsejosRoute,
+  DondeDormirRoute: DondeDormirRoute,
+  QueVerYHacerRoute: QueVerYHacerRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
