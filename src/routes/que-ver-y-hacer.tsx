@@ -6,17 +6,17 @@ import { useContent } from "@/content";
 export const Route = createFileRoute("/que-ver-y-hacer")({
   head: () => ({
     meta: [
-      { title: "Qué ver en Corralejo: dunas, playas e Isla de Lobos" },
+      { title: "Qué ver en Corralejo y el norte de Fuerteventura: guía local" },
       {
         name: "description",
         content:
-          "Qué ver y hacer en Corralejo: Parque Natural de las Dunas, Grandes Playas, kitesurf y windsurf, Isla de Lobos, el pueblo pesquero y los mejores miradores.",
+          "Qué ver en Corralejo y el norte de Fuerteventura, contado por alguien que vive aquí: dunas, Popcorn Beach, lagos de El Cotillo, Tindaya, Montaña Roja, Majanicho y la Casa de los Coroneles.",
       },
-      { property: "og:title", content: "Qué ver en Corralejo, Fuerteventura" },
+      { property: "og:title", content: "Qué ver en Corralejo y el norte de Fuerteventura" },
       {
         property: "og:description",
         content:
-          "Dunas, Grandes Playas, kitesurf, Isla de Lobos, el pueblo y los miradores del norte de Fuerteventura.",
+          "Guía local del norte de Fuerteventura: dunas de Corralejo, Popcorn Beach, El Cotillo, Tindaya, Majanicho y surf, con avisos prácticos honestos.",
       },
       { property: "og:type", content: "article" },
       { property: "og:url", content: "/que-ver-y-hacer" },
@@ -33,8 +33,8 @@ function QueVer() {
     <>
       <PageHeader
         eyebrow="Qué ver y hacer"
-        title="Los imprescindibles de Corralejo"
-        intro="Del campo dunar protegido al islote volcánico de Lobos, el norte de Fuerteventura reúne playas enormes, viento perfecto para el kitesurf y un pueblo marinero para terminar el día."
+        title="El norte de Fuerteventura, contado desde aquí"
+        intro="Esta no es una guía turística más: vivimos en el norte y te contamos lo que de verdad merece la visita, con sus leyendas —dichas como tales— y sus avisos importantes. Del campo dunar a Popcorn Beach, de El Cotillo a Tindaya."
       />
 
       <Section>
@@ -47,8 +47,8 @@ function QueVer() {
               <img
                 src={a.imagen}
                 alt={a.titulo}
-                width={1200}
-                height={800}
+                width={1024}
+                height={688}
                 loading="lazy"
                 className={`w-full rounded-3xl object-cover shadow-soft ${
                   i % 2 === 1 ? "md:order-2" : ""
@@ -61,9 +61,27 @@ function QueVer() {
                 <h2 className="mt-3 font-display text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
                   {a.titulo}
                 </h2>
-                <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-                  {a.texto}
-                </p>
+                {a.parrafos.map((p, j) => (
+                  <p
+                    key={j}
+                    className="mt-4 text-base leading-relaxed text-muted-foreground"
+                  >
+                    {p}
+                  </p>
+                ))}
+                {"aviso" in a && a.aviso && (
+                  <div
+                    role="alert"
+                    className="mt-6 rounded-2xl border-l-4 border-gold-ink bg-sand p-5"
+                  >
+                    <p className="text-sm font-semibold uppercase tracking-wide text-gold-ink">
+                      ⚠ {a.aviso.titulo}
+                    </p>
+                    <p className="mt-2 text-sm leading-relaxed text-foreground">
+                      {a.aviso.texto}
+                    </p>
+                  </div>
+                )}
               </div>
             </article>
           ))}
