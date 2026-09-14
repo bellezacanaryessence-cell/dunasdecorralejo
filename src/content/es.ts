@@ -11,10 +11,16 @@ import hotel1 from "@/assets/hotel-1.jpg";
 import hotel2 from "@/assets/hotel-2.jpg";
 import hotel3 from "@/assets/hotel-3.jpg";
 import hotel4 from "@/assets/hotel-4.jpg";
-import kitesurf from "@/assets/kitesurf.jpg";
-import islaLobos from "@/assets/isla-lobos.jpg";
-import pueblo from "@/assets/pueblo-corralejo.jpg";
 import grandesPlayas from "@/assets/grandes-playas.jpg";
+import popcornBeach from "@/assets/popcorn-beach.jpg";
+import elCotillo from "@/assets/el-cotillo.jpg";
+import montanaRoja from "@/assets/montana-roja.jpg";
+import majanicho from "@/assets/majanicho.jpg";
+import surfNorte from "@/assets/surf-norte.jpg";
+import casaCoroneles from "@/assets/casa-coroneles.jpg";
+import tindaya from "@/assets/tindaya.jpg";
+import cuevaDelLlano from "@/assets/cueva-del-llano.jpg";
+import pueblo from "@/assets/pueblo-corralejo.jpg";
 
 export const es = {
   nav: [
