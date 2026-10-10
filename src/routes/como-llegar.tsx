@@ -6,6 +6,7 @@ import { useContent } from "@/content";
 const icons = [Plane, Car, Bus, Ship];
 
 export const Route = createFileRoute("/como-llegar")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       { title: "Cómo llegar a Corralejo desde el aeropuerto de Fuerteventura" },
