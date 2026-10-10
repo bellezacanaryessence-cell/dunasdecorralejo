@@ -83,6 +83,7 @@ export const es = {
   atracciones: [
     {
       titulo: "Parque Natural de las Dunas de Corralejo",
+      gyg: "dunas Corralejo",
       parrafos: [
         "Empecemos desmontando el mito más repetido: la arena de las dunas NO viene del Sáhara. Es de origen orgánico: durante miles de años, la disgregación y pulverización de conchas de moluscos y otros organismos marinos fue depositando esa arena en la costa norte. Por eso es tan clara y tan fina, casi blanca cuando le da el sol de lleno.",
         "El parque se declaró Parque Natural en 1994 y además es Zona de Especial Protección para las Aves: aquí anida, entre otras, la pardela cenicienta. Más de diez kilómetros de campo dunar atravesados por la FV-1, con accesos señalizados para parar el coche y caminar hasta el mar. Mi consejo de siempre: ven a primera hora o al atardecer, cuando la luz rasante dibuja las crestas y hay mucha menos gente.",
@@ -133,6 +134,7 @@ export const es = {
     },
     {
       titulo: "Surf y bodyboard en la costa norte",
+      gyg: "surf Corralejo",
       parrafos: [
         "Si lo tuyo es coger olas, estás en el sitio correcto: toda la costa entre Corralejo y El Cotillo es muy buena para el surf y el bodyboard, con picos para distintos niveles según el mar de fondo y la marea.",
         "Y no se acaba ahí: la costa desde El Cotillo hacia Tindaya también guarda olas potentes y mucho más vacías. Pregunta en las escuelas del pueblo por el parte del día; el norte cambia rápido y los locales saben dónde está funcionando.",
@@ -180,6 +182,7 @@ export const es = {
     },
     {
       titulo: "Corralejo pueblo",
+      gyg: "Corralejo",
       parrafos: [
         "Terminamos donde empezamos. El casco antiguo de Corralejo conserva las casitas blancas alrededor del muelle viejo, con terrazas de pescado fresco, tiendas y mercadillo los martes y viernes.",
         "Y cuando cae el sol, el pueblo cambia de ritmo: ambiente joven y muy buena vida nocturna. Es, con diferencia, el mejor sitio del norte para salir de fiesta: bares alrededor de la plaza, música en directo y terrazas hasta tarde. El paseo marítimo al atardecer, antes de cenar, es el plan tranquilo perfecto.",
@@ -187,6 +190,13 @@ export const es = {
       imagen: pueblo,
     },
   ],
+
+  alquilerCoche: {
+    titulo: "Alquila tu coche en Fuerteventura",
+    texto:
+      "El coche es, con diferencia, la mejor forma de moverse por el norte: las dunas, El Cotillo, Lajares o La Oliva quedan a un paseo y el transporte público llega solo hasta cierto punto. Con un comparador encuentras el mejor precio de alquiler, tanto en el aeropuerto como en Corralejo.",
+    cta: "Comparar precios de alquiler",
+  },
 
   comoLlegar: [
     {
@@ -239,6 +249,8 @@ export const es = {
       "Guía independiente de viaje sobre Corralejo, sus dunas y el norte de Fuerteventura.",
     afiliados:
       "Transparencia: esta web incluye enlaces de afiliado de Booking.com. Si reservas a través de ellos podemos recibir una pequeña comisión sin ningún coste adicional para ti. Esto nos ayuda a mantener la guía actualizada y no influye en las recomendaciones.",
+    afiliadosCorto:
+      "Algunos enlaces son de afiliado: si reservas a través de ellos recibimos una pequeña comisión, sin coste extra para ti.",
     legalLinks: [
       { to: "/aviso-legal", label: "Aviso legal" },
       { to: "/privacidad", label: "Política de privacidad" },
