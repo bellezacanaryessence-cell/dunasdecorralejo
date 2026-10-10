@@ -3,6 +3,7 @@ import { PageHeader, Section } from "@/components/PageLayout";
 import { SITE } from "@/config/site";
 
 export const Route = createFileRoute("/privacidad")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       { title: "Política de privacidad | Dunas de Corralejo" },

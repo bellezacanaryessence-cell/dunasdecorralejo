@@ -4,6 +4,7 @@ import { PageHeader, Section } from "@/components/PageLayout";
 import { useContent } from "@/content";
 
 export const Route = createFileRoute("/consejos")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       { title: "Consejos para visitar las Dunas de Corralejo" },

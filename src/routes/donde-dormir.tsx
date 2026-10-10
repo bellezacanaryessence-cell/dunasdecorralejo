@@ -5,6 +5,7 @@ import { PageHeader, Section } from "@/components/PageLayout";
 import { useContent } from "@/content";
 
 export const Route = createFileRoute("/donde-dormir")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       { title: "Hoteles en Corralejo: dónde dormir junto a las dunas" },

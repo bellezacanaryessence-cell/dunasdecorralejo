@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader, Section } from "@/components/PageLayout";
 
 export const Route = createFileRoute("/cookies")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       { title: "Política de cookies | Dunas de Corralejo" },

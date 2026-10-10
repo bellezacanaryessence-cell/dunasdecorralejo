@@ -4,6 +4,7 @@ import { PageHeader, Section } from "@/components/PageLayout";
 import { useContent } from "@/content";
 
 export const Route = createFileRoute("/que-ver-y-hacer")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       { title: "Qué ver en Corralejo y el norte de Fuerteventura: guía local" },

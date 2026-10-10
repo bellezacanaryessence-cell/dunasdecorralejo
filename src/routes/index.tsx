@@ -7,6 +7,7 @@ import { Section } from "@/components/PageLayout";
 import { useContent } from "@/content";
 
 export const Route = createFileRoute("/")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       {

@@ -3,6 +3,7 @@ import { PageHeader, Section } from "@/components/PageLayout";
 import { SITE } from "@/config/site";
 
 export const Route = createFileRoute("/aviso-legal")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       { title: "Aviso legal | Dunas de Corralejo" },
