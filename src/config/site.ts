@@ -18,6 +18,26 @@ export const AFFILIATE_URL =
   "https://www.booking.com/searchresults.es.html?ss=Corralejo%2C+Fuerteventura"; // ← PEGA AQUÍ TU ENLACE DE AFILIADO
 
 /**
+ * ─────────────────────────────────────────────────────────────
+ *  ENLACES DE AFILIADO: GETYOURGUIDE Y DISCOVERCARS
+ * ─────────────────────────────────────────────────────────────
+ *  GYG_PARTNER_ID es tu ID de partner de GetYourGuide y
+ *  DISCOVERCARS_URL tu enlace de afiliado de DiscoverCars
+ *  (ya llevan los valores reales; edítalos aquí si cambian).
+ */
+export const GYG_PARTNER_ID = "QIMQH8E";
+export const DISCOVERCARS_URL =
+  "https://www.discovercars.com/?a_aid=dunasdecorralejo";
+
+/**
+ * Construye un enlace de búsqueda de GetYourGuide con tu partner_id.
+ * Por defecto busca "Corralejo Fuerteventura".
+ */
+export function gygLink(query: string = "Corralejo Fuerteventura"): string {
+  return `https://www.getyourguide.es/s/?q=${encodeURIComponent(query)}&partner_id=${GYG_PARTNER_ID}`;
+}
+
+/**
  * Construye un enlace de afiliado para un alojamiento concreto.
  * Si tu enlace ya lleva parámetros, se añaden con "&".
  */
