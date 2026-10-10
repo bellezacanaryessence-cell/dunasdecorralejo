@@ -17,7 +17,6 @@ import { Route as CookiesRouteImport } from './routes/cookies'
 import { Route as DondeDormirRouteImport } from './routes/donde-dormir'
 import { Route as PrivacidadRouteImport } from './routes/privacidad'
 import { Route as QueVerYHacerRouteImport } from './routes/que-ver-y-hacer'
-import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -59,11 +58,6 @@ const QueVerYHacerRoute = QueVerYHacerRouteImport.update({
   path: '/que-ver-y-hacer',
   getParentRoute: () => rootRouteImport,
 } as any)
-const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
-  id: '/sitemap.xml',
-  path: '/sitemap.xml',
-  getParentRoute: () => rootRouteImport,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -74,7 +68,6 @@ export interface FileRoutesByFullPath {
   '/donde-dormir': typeof DondeDormirRoute
   '/privacidad': typeof PrivacidadRoute
   '/que-ver-y-hacer': typeof QueVerYHacerRoute
-  '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -85,7 +78,6 @@ export interface FileRoutesByTo {
   '/donde-dormir': typeof DondeDormirRoute
   '/privacidad': typeof PrivacidadRoute
   '/que-ver-y-hacer': typeof QueVerYHacerRoute
-  '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -97,7 +89,6 @@ export interface FileRoutesById {
   '/donde-dormir': typeof DondeDormirRoute
   '/privacidad': typeof PrivacidadRoute
   '/que-ver-y-hacer': typeof QueVerYHacerRoute
-  '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -110,7 +101,6 @@ export interface FileRouteTypes {
     | '/donde-dormir'
     | '/privacidad'
     | '/que-ver-y-hacer'
-    | '/sitemap.xml'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -121,7 +111,6 @@ export interface FileRouteTypes {
     | '/donde-dormir'
     | '/privacidad'
     | '/que-ver-y-hacer'
-    | '/sitemap.xml'
   id:
     | '__root__'
     | '/'
@@ -132,7 +121,6 @@ export interface FileRouteTypes {
     | '/donde-dormir'
     | '/privacidad'
     | '/que-ver-y-hacer'
-    | '/sitemap.xml'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -144,7 +132,6 @@ export interface RootRouteChildren {
   DondeDormirRoute: typeof DondeDormirRoute
   PrivacidadRoute: typeof PrivacidadRoute
   QueVerYHacerRoute: typeof QueVerYHacerRoute
-  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -205,13 +192,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof QueVerYHacerRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/sitemap.xml': {
-      id: '/sitemap.xml'
-      path: '/sitemap.xml'
-      fullPath: '/sitemap.xml'
-      preLoaderRoute: typeof SitemapDotxmlRouteImport
-      parentRoute: typeof rootRouteImport
-    }
   }
 }
 
@@ -224,7 +204,6 @@ const rootRouteChildren: RootRouteChildren = {
   DondeDormirRoute: DondeDormirRoute,
   PrivacidadRoute: PrivacidadRoute,
   QueVerYHacerRoute: QueVerYHacerRoute,
-  SitemapDotxmlRoute: SitemapDotxmlRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
