@@ -60,6 +60,10 @@ export function SiteFooter() {
           {footer.afiliados}
         </p>
 
+        <p className="mt-4 text-xs leading-relaxed text-muted-foreground/80">
+          {footer.afiliadosCorto}
+        </p>
+
         <p className="mt-6 text-xs text-muted-foreground">
           © {year} {SITE.name}. Contenido informativo elaborado de forma
           independiente.

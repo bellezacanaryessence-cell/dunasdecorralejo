@@ -1,7 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Plane, Car, Bus, Ship } from "lucide-react";
+import { AffiliateButton } from "@/components/AffiliateButton";
 import { PageHeader, Section } from "@/components/PageLayout";
 import { useContent } from "@/content";
+import { DISCOVERCARS_URL } from "@/config/site";
 
 const icons = [Plane, Car, Bus, Ship];
 
@@ -30,7 +32,7 @@ export const Route = createFileRoute("/como-llegar")({
 });
 
 function ComoLlegar() {
-  const { comoLlegar } = useContent();
+  const { comoLlegar, alquilerCoche } = useContent();
 
   return (
     <>
@@ -63,6 +65,18 @@ function ComoLlegar() {
               </article>
             );
           })}
+        </div>
+
+        <div className="mt-10 rounded-3xl border border-border/70 bg-sand p-8">
+          <h2 className="font-display text-2xl font-semibold text-foreground">
+            {alquilerCoche.titulo}
+          </h2>
+          <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+            {alquilerCoche.texto}
+          </p>
+          <AffiliateButton href={DISCOVERCARS_URL} className="mt-6">
+            {alquilerCoche.cta}
+          </AffiliateButton>
         </div>
 
         <p className="mt-8 text-xs leading-relaxed text-muted-foreground">

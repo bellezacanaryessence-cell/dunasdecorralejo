@@ -248,7 +248,7 @@ export const es = {
     about:
       "Guía independiente de viaje sobre Corralejo, sus dunas y el norte de Fuerteventura.",
     afiliados:
-      "Transparencia: esta web incluye enlaces de afiliado de Booking.com. Si reservas a través de ellos podemos recibir una pequeña comisión sin ningún coste adicional para ti. Esto nos ayuda a mantener la guía actualizada y no influye en las recomendaciones.",
+      "Transparencia: esta web incluye enlaces de afiliado de Booking.com, GetYourGuide y DiscoverCars. Si reservas a través de ellos podemos recibir una pequeña comisión sin ningún coste adicional para ti. Esto nos ayuda a mantener la guía actualizada y no influye en las recomendaciones.",
     afiliadosCorto:
       "Algunos enlaces son de afiliado: si reservas a través de ellos recibimos una pequeña comisión, sin coste extra para ti.",
     legalLinks: [

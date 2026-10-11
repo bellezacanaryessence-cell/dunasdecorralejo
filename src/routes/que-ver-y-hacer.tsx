@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { AffiliateButton } from "@/components/AffiliateButton";
 import { PageHeader, Section } from "@/components/PageLayout";
 import { useContent } from "@/content";
+import { gygLink } from "@/config/site";
 
 export const Route = createFileRoute("/que-ver-y-hacer")({
   staticData: { sitemap: true },
@@ -82,6 +83,16 @@ function QueVer() {
                       {a.aviso.texto}
                     </p>
                   </div>
+                )}
+                {"gyg" in a && a.gyg && (
+                  <AffiliateButton
+                    href={gygLink(a.gyg)}
+                    variant="outline"
+                    size="sm"
+                    className="mt-6"
+                  >
+                    Ver excursiones y actividades
+                  </AffiliateButton>
                 )}
               </div>
             </article>
