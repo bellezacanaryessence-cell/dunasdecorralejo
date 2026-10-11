@@ -25,16 +25,14 @@ jobs:
       - name: Descargar proyecto
         uses: actions/checkout@v4
 
-      - name: Preparar Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 24
+      - name: Preparar Bun
+        uses: oven-sh/setup-bun@v2
 
       - name: Instalar dependencias
-        run: npm install --legacy-peer-deps
+        run: bun install --frozen-lockfile
 
       - name: Construir web
-        run: npm run build
+        run: bun run build
 
       - name: Configurar GitHub Pages
         uses: actions/configure-pages@v5
