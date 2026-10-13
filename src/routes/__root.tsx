@@ -126,6 +126,11 @@ function RootShell({ children }: { children: ReactNode }) {
       <body>
         {children}
         <Scripts />
+        <script
+          data-goatcounter="https://dunasdecorralejo.goatcounter.com/count"
+          async
+          src="//gc.zgo.at/count.js"
+        ></script>
       </body>
     </html>
   );
