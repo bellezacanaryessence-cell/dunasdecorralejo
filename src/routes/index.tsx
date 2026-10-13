@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
-import heroImg from "@/assets/hero-dunas.jpg";
+import heroImg from "@/assets/img_8366.webp.asset.json";
 import grandesPlayas from "@/assets/grandes-playas.jpg";
 import { AffiliateButton } from "@/components/AffiliateButton";
 import { Section } from "@/components/PageLayout";
@@ -60,10 +60,10 @@ function Index() {
     <>
       <section className="relative isolate min-h-[88vh] overflow-hidden">
         <img
-          src={heroImg}
-          alt="Dunas doradas del Parque Natural de Corralejo junto al océano turquesa, Fuerteventura"
-          width={1920}
-          height={1088}
+          src={heroImg.url}
+          alt="Carretera con arena de las Dunas de Corralejo al atardecer, con las colinas volcánicas del norte de Fuerteventura al fondo"
+          width={2400}
+          height={1350}
           className="absolute inset-0 h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-foreground/55 via-foreground/25 to-foreground/70" />
