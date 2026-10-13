@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - main
-    paths-ignore:
-      - ".github/workflows/deploy-pages.yml"
   workflow_dispatch:
 
 permissions:
@@ -40,7 +38,7 @@ jobs:
       - name: Preparar archivos para Pages
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist/client
+          path: .output/public
 
   deploy:
     environment:
