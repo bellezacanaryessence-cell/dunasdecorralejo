@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { AffiliateButton } from "@/components/AffiliateButton";
+import { ImageCredit } from "@/components/ImageCredit";
 import { PageHeader, Section } from "@/components/PageLayout";
 import { useContent } from "@/content";
 import { getContent } from "@/content";
@@ -60,6 +61,10 @@ export function LugarPage({ slug }: { slug: string }) {
   const { lugar, base } = getLugar(slug);
   const parrafos = [...(lugar.propio?.parrafos ?? base?.parrafos ?? []), ...lugar.extra];
   const imagen = lugar.propio?.imagen ?? base?.imagen;
+  // alt y crédito solo aplican cuando la foto viene de la atracción base.
+  const fotoBase = !lugar.propio?.imagen && base ? base : undefined;
+  const alt = (fotoBase && "alt" in fotoBase && fotoBase.alt) || lugar.nombre;
+  const credito = fotoBase && "credito" in fotoBase ? fotoBase.credito : undefined;
   const aviso = lugar.propio?.aviso ?? (base && "aviso" in base ? base.aviso : undefined);
   const href =
     lugar.afiliado.tipo === "coche" ? DISCOVERCARS_URL : gygLink(lugar.afiliado.query);
@@ -71,13 +76,16 @@ export function LugarPage({ slug }: { slug: string }) {
       <Section>
         <article className="grid gap-7 md:grid-cols-2 md:items-start">
           {imagen && (
-            <img
-              src={imagen}
-              alt={lugar.nombre}
-              width={1024}
-              height={688}
-              className="w-full rounded-3xl object-cover shadow-soft"
-            />
+            <figure>
+              <img
+                src={imagen}
+                alt={alt}
+                width={1024}
+                height={688}
+                className="w-full rounded-3xl object-cover shadow-soft"
+              />
+              {credito && <ImageCredit credito={credito} />}
+            </figure>
           )}
           <div className="min-w-0">
             {parrafos.map((p, i) => (

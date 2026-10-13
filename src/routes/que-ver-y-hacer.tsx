@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { AffiliateButton } from "@/components/AffiliateButton";
+import { ImageCredit } from "@/components/ImageCredit";
 import { PageHeader, Section } from "@/components/PageLayout";
 import { useContent } from "@/content";
 import { gygLink } from "@/config/site";
@@ -46,16 +47,17 @@ function QueVer() {
               key={a.titulo}
               className="grid gap-7 md:grid-cols-2 md:items-center"
             >
-              <img
-                src={a.imagen}
-                alt={a.titulo}
-                width={1024}
-                height={688}
-                loading="lazy"
-                className={`w-full rounded-3xl object-cover shadow-soft ${
-                  i % 2 === 1 ? "md:order-2" : ""
-                }`}
-              />
+              <figure className={i % 2 === 1 ? "md:order-2" : undefined}>
+                <img
+                  src={a.imagen}
+                  alt={("alt" in a && a.alt) || a.titulo}
+                  width={1024}
+                  height={688}
+                  loading="lazy"
+                  className="w-full rounded-3xl object-cover shadow-soft"
+                />
+                {"credito" in a && a.credito && <ImageCredit credito={a.credito} />}
+              </figure>
               <div className="min-w-0">
                 <span className="text-xs font-semibold uppercase tracking-[0.2em] text-gold-ink">
                   {String(i + 1).padStart(2, "0")}

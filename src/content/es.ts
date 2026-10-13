@@ -17,7 +17,7 @@ import elCotillo from "@/assets/el-cotillo.jpg";
 import montanaRoja from "@/assets/montana-roja.jpg";
 import majanicho from "@/assets/majanicho.jpg";
 import surfNorte from "@/assets/surf-norte.jpg";
-import casaCoroneles from "@/assets/casa-coroneles.jpg";
+import casaCoroneles from "@/assets/casa-coroneles.webp";
 import tindaya from "@/assets/tindaya.jpg";
 import cuevaDelLlano from "@/assets/cueva-del-llano.jpg";
 import pueblo from "@/assets/pueblo-corralejo.jpg";
@@ -155,6 +155,15 @@ export const es = {
         "Aquí se cuenta de todo, y te lo cuento como se cuenta allí: que tiene 365 puertas y ventanas, una por cada día del año; que guarda una capilla en su interior —esto es real, aunque poco conocido—; y que existía un pasadizo subterráneo hasta la iglesia para que el coronel pudiera escapar en caso de ataque, leyenda local hoy tapiada.",
       ],
       imagen: casaCoroneles,
+      alt: "Fachada de la Casa de los Coroneles en La Oliva, Fuerteventura",
+      credito: {
+        autor: "Frank Vincentz",
+        licencia: "CC BY-SA 3.0",
+        licenciaUrl: "https://creativecommons.org/licenses/by-sa/3.0/",
+        fuente: "Wikimedia Commons",
+        fuenteUrl:
+          "https://commons.wikimedia.org/wiki/File:La_Oliva_-_Casa_de_los_Coroneles_03_ies.jpg",
+      },
       aviso: {
         titulo: "Comprueba antes de ir",
         texto:
