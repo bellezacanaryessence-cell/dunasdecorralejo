@@ -21,6 +21,8 @@ import casaCoroneles from "@/assets/casa-coroneles.jpg";
 import tindaya from "@/assets/tindaya.jpg";
 import cuevaDelLlano from "@/assets/cueva-del-llano.jpg";
 import pueblo from "@/assets/pueblo-corralejo.jpg";
+import islaLobos from "@/assets/isla-lobos.jpg";
+import { lugares } from "./lugares-es";
 
 export const es = {
   nav: [
@@ -83,6 +85,7 @@ export const es = {
   atracciones: [
     {
       titulo: "Parque Natural de las Dunas de Corralejo",
+      guia: "/grandes-playas",
       gyg: "dunas Corralejo",
       parrafos: [
         "Empecemos desmontando el mito más repetido: la arena de las dunas NO viene del Sáhara. Es de origen orgánico: durante miles de años, la disgregación y pulverización de conchas de moluscos y otros organismos marinos fue depositando esa arena en la costa norte. Por eso es tan clara y tan fina, casi blanca cuando le da el sol de lleno.",
@@ -97,6 +100,7 @@ export const es = {
     },
     {
       titulo: "Playa de las Palomitas (Popcorn Beach)",
+      guia: "/popcorn-beach",
       parrafos: [
         "Su nombre oficial es Playa del Bajo de la Burra —también la oirás como Playa del Hierro—, pero todo el mundo la conoce como Popcorn Beach o la playa de las palomitas. Está entre Corralejo y Majanicho y se llega por una pista de tierra de unos 4-5 kilómetros: ve despacio, que hay piedra suelta.",
         "Las famosas «palomitas» no son piedras ni coral: son rodolitos, algas calcáreas fosilizadas que tardan miles de años en formarse con esa forma redondeada. Tenlo claro: no es una playa de baño, es una playa para visitar, mirar de cerca y hacer fotos. El baño aquí no es cómodo ni es el plan.",
@@ -110,6 +114,7 @@ export const es = {
     },
     {
       titulo: "El Cotillo: faros, muelle y lagos",
+      guia: "/el-cotillo",
       parrafos: [
         "El Cotillo es el otro pueblo con encanto del norte, al oeste, mirando al mar de verdad. En la punta del Tostón verás dos faros —el viejo y el nuevo, que mide 37 metros— junto al edificio original de 1897, que alberga el Museo de la Pesca Tradicional. Ojo: el museo abre de forma intermitente, así que comprueba antes de ir si está abierto para no darte el viaje en balde.",
         "Baja después al muelle viejo, el muelle de pescadores de toda la vida, prácticamente igual que hace décadas, y sube al castillo, la antigua fortaleza militar desde la que se defendía esta parte de la costa. Y si vienes con niños, la joya son los Lagos de El Cotillo: piscinas naturales que se forman entre barreras de roca que frenan la corriente, con el agua casi siempre tranquila. Ideales para familias y para bañarse con peques sin preocupaciones.",
@@ -118,6 +123,7 @@ export const es = {
     },
     {
       titulo: "Montaña Roja",
+      guia: "/montana-roja",
       parrafos: [
         "Dentro del propio parque natural se levanta la Montaña Roja, un cono volcánico que para la gente de la isla siempre ha tenido fama de montaña mística, con una energía especial. Lo contamos como lo que es: tradición y creencia local, no un dato científico — pero sube un atardecer y entenderás de dónde viene la fama.",
         "También se cuenta que en días excepcionalmente claros, desde su cima se llega a ver la costa de África. Lo que sí te garantizo son unas vistas enormes de las dunas, de Corralejo y de la isla de Lobos.",
@@ -143,6 +149,7 @@ export const es = {
     },
     {
       titulo: "La Oliva: Casa de los Coroneles",
+      guia: "/la-oliva",
       parrafos: [
         "En La Oliva, la antigua capital militar de la isla, se levanta la Casa de los Coroneles, del siglo XVIII: el máximo exponente de la arquitectura civil de Fuerteventura, declarada Monumento Artístico Nacional en 1979. Sigue la estructura típica canaria: un patio central que articula todas las dependencias y galerías de madera.",
         "Aquí se cuenta de todo, y te lo cuento como se cuenta allí: que tiene 365 puertas y ventanas, una por cada día del año; que guarda una capilla en su interior —esto es real, aunque poco conocido—; y que existía un pasadizo subterráneo hasta la iglesia para que el coronel pudiera escapar en caso de ataque, leyenda local hoy tapiada.",
@@ -182,6 +189,7 @@ export const es = {
     },
     {
       titulo: "Corralejo pueblo",
+      guia: "/corralejo-pueblo",
       gyg: "Corralejo",
       parrafos: [
         "Terminamos donde empezamos. El casco antiguo de Corralejo conserva las casitas blancas alrededor del muelle viejo, con terrazas de pescado fresco, tiendas y mercadillo los martes y viernes.",
@@ -190,6 +198,8 @@ export const es = {
       imagen: pueblo,
     },
   ],
+
+  lugares: lugares(islaLobos),
 
   alquilerCoche: {
     titulo: "Alquila tu coche en Fuerteventura",
