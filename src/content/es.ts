@@ -21,7 +21,7 @@ import casaCoroneles from "@/assets/casa-coroneles.jpg";
 import tindaya from "@/assets/tindaya.jpg";
 import cuevaDelLlano from "@/assets/cueva-del-llano.jpg";
 import pueblo from "@/assets/pueblo-corralejo.jpg";
-import islaLobos from "@/assets/isla-lobos.jpg";
+
 import { lugares } from "./lugares-es";
 
 export const es = {
@@ -199,7 +199,7 @@ export const es = {
     },
   ],
 
-  lugares: lugares(islaLobos),
+  lugares,
 
   alquilerCoche: {
     titulo: "Alquila tu coche en Fuerteventura",
