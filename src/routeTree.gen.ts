@@ -14,7 +14,14 @@ import { Route as AvisoLegalRouteImport } from './routes/aviso-legal'
 import { Route as ComoLlegarRouteImport } from './routes/como-llegar'
 import { Route as ConsejosRouteImport } from './routes/consejos'
 import { Route as CookiesRouteImport } from './routes/cookies'
+import { Route as CorralejoPuebloRouteImport } from './routes/corralejo-pueblo'
 import { Route as DondeDormirRouteImport } from './routes/donde-dormir'
+import { Route as ElCotilloRouteImport } from './routes/el-cotillo'
+import { Route as GrandesPlayasRouteImport } from './routes/grandes-playas'
+import { Route as IslaDeLobosRouteImport } from './routes/isla-de-lobos'
+import { Route as LaOlivaRouteImport } from './routes/la-oliva'
+import { Route as MontanaRojaRouteImport } from './routes/montana-roja'
+import { Route as PopcornBeachRouteImport } from './routes/popcorn-beach'
 import { Route as PrivacidadRouteImport } from './routes/privacidad'
 import { Route as QueVerYHacerRouteImport } from './routes/que-ver-y-hacer'
 
@@ -43,9 +50,44 @@ const CookiesRoute = CookiesRouteImport.update({
   path: '/cookies',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CorralejoPuebloRoute = CorralejoPuebloRouteImport.update({
+  id: '/corralejo-pueblo',
+  path: '/corralejo-pueblo',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const DondeDormirRoute = DondeDormirRouteImport.update({
   id: '/donde-dormir',
   path: '/donde-dormir',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ElCotilloRoute = ElCotilloRouteImport.update({
+  id: '/el-cotillo',
+  path: '/el-cotillo',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GrandesPlayasRoute = GrandesPlayasRouteImport.update({
+  id: '/grandes-playas',
+  path: '/grandes-playas',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IslaDeLobosRoute = IslaDeLobosRouteImport.update({
+  id: '/isla-de-lobos',
+  path: '/isla-de-lobos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LaOlivaRoute = LaOlivaRouteImport.update({
+  id: '/la-oliva',
+  path: '/la-oliva',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MontanaRojaRoute = MontanaRojaRouteImport.update({
+  id: '/montana-roja',
+  path: '/montana-roja',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PopcornBeachRoute = PopcornBeachRouteImport.update({
+  id: '/popcorn-beach',
+  path: '/popcorn-beach',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PrivacidadRoute = PrivacidadRouteImport.update({
@@ -65,7 +107,14 @@ export interface FileRoutesByFullPath {
   '/como-llegar': typeof ComoLlegarRoute
   '/consejos': typeof ConsejosRoute
   '/cookies': typeof CookiesRoute
+  '/corralejo-pueblo': typeof CorralejoPuebloRoute
   '/donde-dormir': typeof DondeDormirRoute
+  '/el-cotillo': typeof ElCotilloRoute
+  '/grandes-playas': typeof GrandesPlayasRoute
+  '/isla-de-lobos': typeof IslaDeLobosRoute
+  '/la-oliva': typeof LaOlivaRoute
+  '/montana-roja': typeof MontanaRojaRoute
+  '/popcorn-beach': typeof PopcornBeachRoute
   '/privacidad': typeof PrivacidadRoute
   '/que-ver-y-hacer': typeof QueVerYHacerRoute
 }
@@ -75,7 +124,14 @@ export interface FileRoutesByTo {
   '/como-llegar': typeof ComoLlegarRoute
   '/consejos': typeof ConsejosRoute
   '/cookies': typeof CookiesRoute
+  '/corralejo-pueblo': typeof CorralejoPuebloRoute
   '/donde-dormir': typeof DondeDormirRoute
+  '/el-cotillo': typeof ElCotilloRoute
+  '/grandes-playas': typeof GrandesPlayasRoute
+  '/isla-de-lobos': typeof IslaDeLobosRoute
+  '/la-oliva': typeof LaOlivaRoute
+  '/montana-roja': typeof MontanaRojaRoute
+  '/popcorn-beach': typeof PopcornBeachRoute
   '/privacidad': typeof PrivacidadRoute
   '/que-ver-y-hacer': typeof QueVerYHacerRoute
 }
@@ -86,7 +142,14 @@ export interface FileRoutesById {
   '/como-llegar': typeof ComoLlegarRoute
   '/consejos': typeof ConsejosRoute
   '/cookies': typeof CookiesRoute
+  '/corralejo-pueblo': typeof CorralejoPuebloRoute
   '/donde-dormir': typeof DondeDormirRoute
+  '/el-cotillo': typeof ElCotilloRoute
+  '/grandes-playas': typeof GrandesPlayasRoute
+  '/isla-de-lobos': typeof IslaDeLobosRoute
+  '/la-oliva': typeof LaOlivaRoute
+  '/montana-roja': typeof MontanaRojaRoute
+  '/popcorn-beach': typeof PopcornBeachRoute
   '/privacidad': typeof PrivacidadRoute
   '/que-ver-y-hacer': typeof QueVerYHacerRoute
 }
@@ -98,7 +161,14 @@ export interface FileRouteTypes {
     | '/como-llegar'
     | '/consejos'
     | '/cookies'
+    | '/corralejo-pueblo'
     | '/donde-dormir'
+    | '/el-cotillo'
+    | '/grandes-playas'
+    | '/isla-de-lobos'
+    | '/la-oliva'
+    | '/montana-roja'
+    | '/popcorn-beach'
     | '/privacidad'
     | '/que-ver-y-hacer'
   fileRoutesByTo: FileRoutesByTo
@@ -108,7 +178,14 @@ export interface FileRouteTypes {
     | '/como-llegar'
     | '/consejos'
     | '/cookies'
+    | '/corralejo-pueblo'
     | '/donde-dormir'
+    | '/el-cotillo'
+    | '/grandes-playas'
+    | '/isla-de-lobos'
+    | '/la-oliva'
+    | '/montana-roja'
+    | '/popcorn-beach'
     | '/privacidad'
     | '/que-ver-y-hacer'
   id:
@@ -118,7 +195,14 @@ export interface FileRouteTypes {
     | '/como-llegar'
     | '/consejos'
     | '/cookies'
+    | '/corralejo-pueblo'
     | '/donde-dormir'
+    | '/el-cotillo'
+    | '/grandes-playas'
+    | '/isla-de-lobos'
+    | '/la-oliva'
+    | '/montana-roja'
+    | '/popcorn-beach'
     | '/privacidad'
     | '/que-ver-y-hacer'
   fileRoutesById: FileRoutesById
@@ -129,7 +213,14 @@ export interface RootRouteChildren {
   ComoLlegarRoute: typeof ComoLlegarRoute
   ConsejosRoute: typeof ConsejosRoute
   CookiesRoute: typeof CookiesRoute
+  CorralejoPuebloRoute: typeof CorralejoPuebloRoute
   DondeDormirRoute: typeof DondeDormirRoute
+  ElCotilloRoute: typeof ElCotilloRoute
+  GrandesPlayasRoute: typeof GrandesPlayasRoute
+  IslaDeLobosRoute: typeof IslaDeLobosRoute
+  LaOlivaRoute: typeof LaOlivaRoute
+  MontanaRojaRoute: typeof MontanaRojaRoute
+  PopcornBeachRoute: typeof PopcornBeachRoute
   PrivacidadRoute: typeof PrivacidadRoute
   QueVerYHacerRoute: typeof QueVerYHacerRoute
 }
@@ -171,11 +262,60 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CookiesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/corralejo-pueblo': {
+      id: '/corralejo-pueblo'
+      path: '/corralejo-pueblo'
+      fullPath: '/corralejo-pueblo'
+      preLoaderRoute: typeof CorralejoPuebloRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/donde-dormir': {
       id: '/donde-dormir'
       path: '/donde-dormir'
       fullPath: '/donde-dormir'
       preLoaderRoute: typeof DondeDormirRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/el-cotillo': {
+      id: '/el-cotillo'
+      path: '/el-cotillo'
+      fullPath: '/el-cotillo'
+      preLoaderRoute: typeof ElCotilloRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/grandes-playas': {
+      id: '/grandes-playas'
+      path: '/grandes-playas'
+      fullPath: '/grandes-playas'
+      preLoaderRoute: typeof GrandesPlayasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/isla-de-lobos': {
+      id: '/isla-de-lobos'
+      path: '/isla-de-lobos'
+      fullPath: '/isla-de-lobos'
+      preLoaderRoute: typeof IslaDeLobosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/la-oliva': {
+      id: '/la-oliva'
+      path: '/la-oliva'
+      fullPath: '/la-oliva'
+      preLoaderRoute: typeof LaOlivaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/montana-roja': {
+      id: '/montana-roja'
+      path: '/montana-roja'
+      fullPath: '/montana-roja'
+      preLoaderRoute: typeof MontanaRojaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/popcorn-beach': {
+      id: '/popcorn-beach'
+      path: '/popcorn-beach'
+      fullPath: '/popcorn-beach'
+      preLoaderRoute: typeof PopcornBeachRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/privacidad': {
@@ -201,7 +341,14 @@ const rootRouteChildren: RootRouteChildren = {
   ComoLlegarRoute: ComoLlegarRoute,
   ConsejosRoute: ConsejosRoute,
   CookiesRoute: CookiesRoute,
+  CorralejoPuebloRoute: CorralejoPuebloRoute,
   DondeDormirRoute: DondeDormirRoute,
+  ElCotilloRoute: ElCotilloRoute,
+  GrandesPlayasRoute: GrandesPlayasRoute,
+  IslaDeLobosRoute: IslaDeLobosRoute,
+  LaOlivaRoute: LaOlivaRoute,
+  MontanaRojaRoute: MontanaRojaRoute,
+  PopcornBeachRoute: PopcornBeachRoute,
   PrivacidadRoute: PrivacidadRoute,
   QueVerYHacerRoute: QueVerYHacerRoute,
 }
