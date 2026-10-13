@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { AffiliateButton } from "@/components/AffiliateButton";
+import { GygWidget } from "@/components/GygWidget";
 import { ImageCredit } from "@/components/ImageCredit";
 import { PageHeader, Section } from "@/components/PageLayout";
 import { useContent } from "@/content";
@@ -108,6 +109,17 @@ function QueVer() {
             </article>
           ))}
         </div>
+
+        <section className="mt-16">
+          <h2 className="font-display text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
+            Excursiones recomendadas
+          </h2>
+          <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+            Actividades en el norte de Fuerteventura con reserva en GetYourGuide.
+            Los enlaces son de afiliado.
+          </p>
+          <GygWidget className="mt-6" />
+        </section>
 
         <div className="mt-16 rounded-3xl border border-border/70 bg-sand p-8 text-center">
           <h2 className="font-display text-2xl font-semibold text-foreground">

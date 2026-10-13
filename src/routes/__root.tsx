@@ -13,6 +13,7 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { GYG_PARTNER_ID } from "@/config/site";
 
 
 function NotFoundComponent() {
@@ -109,6 +110,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&display=swap",
       },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+    ],
+    scripts: [
+      {
+        src: "https://widget.getyourguide.com/dist/pa.umd.production.min.js",
+        async: true,
+        defer: true,
+        "data-gyg-partner-id": GYG_PARTNER_ID,
+      },
     ],
   }),
   shellComponent: RootShell,
