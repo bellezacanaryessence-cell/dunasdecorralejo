@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { AffiliateButton } from "@/components/AffiliateButton";
 import { PageHeader, Section } from "@/components/PageLayout";
 import { useContent } from "@/content";
@@ -83,6 +83,14 @@ function QueVer() {
                       {a.aviso.texto}
                     </p>
                   </div>
+                )}
+                {"guia" in a && a.guia && (
+                  <Link
+                    to={a.guia}
+                    className="mt-6 mr-3 inline-flex items-center text-sm font-semibold text-ocean underline-offset-4 hover:underline"
+                  >
+                    Ver guía completa →
+                  </Link>
                 )}
                 {"gyg" in a && a.gyg && (
                   <AffiliateButton
