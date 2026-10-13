@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
-import heroImg from "@/assets/img_8366.webp.asset.json";
+import heroImg from "@/assets/img_8366.webp";
 import grandesPlayas from "@/assets/grandes-playas.jpg";
 import { AffiliateButton } from "@/components/AffiliateButton";
 import { Section } from "@/components/PageLayout";
@@ -60,7 +60,7 @@ function Index() {
     <>
       <section className="relative isolate min-h-[88vh] overflow-hidden">
         <img
-          src={heroImg.url}
+          src={heroImg}
           alt="Carretera con arena de las Dunas de Corralejo al atardecer, con las colinas volcánicas del norte de Fuerteventura al fondo"
           width={2400}
           height={1350}

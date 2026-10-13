@@ -4,8 +4,8 @@ import { AffiliateButton } from "@/components/AffiliateButton";
 import { PageHeader, Section } from "@/components/PageLayout";
 import { useContent } from "@/content";
 import { DISCOVERCARS_URL } from "@/config/site";
-import accesoParque from "@/assets/img_8314.webp.asset.json";
-import carreteraAtardecer from "@/assets/img_8305.webp.asset.json";
+import accesoParque from "@/assets/img_8314.webp";
+import carreteraAtardecer from "@/assets/img_8305.webp";
 
 const icons = [Plane, Car, Bus, Ship];
 
@@ -71,7 +71,7 @@ function ComoLlegar() {
 
         <div className="mt-10 grid gap-5 sm:grid-cols-2">
           <img
-            src={accesoParque.url}
+            src={accesoParque}
             alt="Carretera de acceso al Parque Natural de las Dunas de Corralejo, con el cartel de espacio natural protegido y el océano al fondo"
             width={1600}
             height={900}
@@ -79,7 +79,7 @@ function ComoLlegar() {
             className="h-64 w-full rounded-3xl object-cover shadow-soft"
           />
           <img
-            src={carreteraAtardecer.url}
+            src={carreteraAtardecer}
             alt="Carretera hacia las Dunas de Corralejo al atardecer, entre malpaís volcánico y el mar, con un coche de frente"
             width={1600}
             height={1200}
