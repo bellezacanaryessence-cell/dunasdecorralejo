@@ -38,13 +38,18 @@ export function gygLink(query: string = "Corralejo Fuerteventura"): string {
 }
 
 /**
- * Construye un enlace de afiliado para un alojamiento concreto.
- * Si tu enlace ya lleva parámetros, se añaden con "&".
+ * Construye un enlace de afiliado de Booking para una búsqueda concreta.
+ * Mantiene los parámetros de tu enlace (como aid) y sustituye la búsqueda
+ * (ss): Booking solo lee el primer ss, así que no basta con añadir otro.
+ * `params` permite afinar la búsqueda, p. ej. un punto de interés:
+ * { dest_id: "900137256", dest_type: "landmark" }.
  */
-export function affiliateLink(query?: string): string {
-  if (!query) return AFFILIATE_URL;
-  const sep = AFFILIATE_URL.includes("?") ? "&" : "?";
-  return `${AFFILIATE_URL}${sep}ss=${encodeURIComponent(query)}`;
+export function affiliateLink(query?: string, params?: Record<string, string>): string {
+  if (!query && !params) return AFFILIATE_URL;
+  const url = new URL(AFFILIATE_URL);
+  if (query) url.searchParams.set("ss", query);
+  for (const [k, v] of Object.entries(params ?? {})) url.searchParams.set(k, v);
+  return url.toString();
 }
 
 export const SITE = {

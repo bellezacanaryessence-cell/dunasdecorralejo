@@ -3,6 +3,7 @@ import { MapPin } from "lucide-react";
 import { AffiliateButton } from "@/components/AffiliateButton";
 import { PageHeader, Section } from "@/components/PageLayout";
 import { useContent } from "@/content";
+import { affiliateLink } from "@/config/site";
 
 export const Route = createFileRoute("/donde-dormir")({
   staticData: { sitemap: true },
@@ -12,13 +13,13 @@ export const Route = createFileRoute("/donde-dormir")({
       {
         name: "description",
         content:
-          "Selección de hoteles y apartamentos en Corralejo por zonas: primera línea de Grandes Playas, centro del pueblo y alojamientos económicos para surfistas.",
+          "Dónde alojarse en Corralejo según lo que busques: centro y puerto, junto a las Grandes Playas y las dunas, o la zona tranquila de Bristol.",
       },
       { property: "og:title", content: "Hoteles en Corralejo: dónde dormir" },
       {
         property: "og:description",
         content:
-          "Hoteles y apartamentos en Corralejo por zonas y presupuesto, con disponibilidad en Booking.com.",
+          "Las tres mejores zonas para alojarse en Corralejo, con disponibilidad en Booking.com.",
       },
       { property: "og:type", content: "article" },
       { property: "og:url", content: "/donde-dormir" },
@@ -29,56 +30,49 @@ export const Route = createFileRoute("/donde-dormir")({
 });
 
 function DondeDormir() {
-  const { hoteles } = useContent();
+  const { zonas } = useContent();
 
   return (
     <>
       <PageHeader
         eyebrow="Dónde dormir"
-        title="Hoteles y apartamentos en Corralejo"
-        intro="Corralejo concentra la mayor oferta de alojamiento del norte de Fuerteventura. Estas son cuatro opciones de ejemplo según zona y presupuesto, desde resorts frente a las dunas hasta alojamientos sencillos junto al puerto."
+        title="Dónde alojarse en Corralejo"
+        intro="Corralejo concentra la mayor oferta de alojamiento del norte de Fuerteventura. Más que un hotel concreto, lo importante es elegir bien la zona: estas son las tres que recomendamos según lo que busques."
       />
 
       <Section>
-        <div className="grid gap-8 sm:grid-cols-2">
-          {hoteles.map((h) => (
+        <div className="grid gap-8 md:grid-cols-3">
+          {zonas.map((z, i) => (
             <article
-              key={h.nombre}
-              className="flex flex-col overflow-hidden rounded-3xl border border-border/70 bg-card shadow-soft transition-transform duration-300 hover:-translate-y-1"
+              key={z.nombre}
+              className="flex flex-col rounded-3xl border border-border/70 bg-card p-6 shadow-soft transition-transform duration-300 hover:-translate-y-1"
             >
-              <img
-                src={h.imagen}
-                alt={`${h.nombre}, alojamiento en ${h.zona}, Corralejo`}
-                width={1024}
-                height={768}
-                loading="lazy"
-                className="h-56 w-full object-cover"
-              />
-              <div className="flex flex-1 flex-col p-6">
-                <div className="flex items-center gap-2 text-xs font-medium uppercase tracking-wider text-gold-ink">
-                  <MapPin className="h-3.5 w-3.5 shrink-0" />
-                  <span className="min-w-0 truncate">{h.zona}</span>
-                </div>
-                <h2 className="mt-3 font-display text-xl font-semibold text-foreground">
-                  {h.nombre}
-                </h2>
-                <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
-                  {h.descripcion}
-                </p>
-                <p className="mt-4 text-sm font-semibold text-ocean">
-                  {h.precio}
-                </p>
-                <AffiliateButton query={h.query} className="mt-5 w-full">
-                  Ver disponibilidad
-                </AffiliateButton>
+              <div className="flex items-center gap-2 text-xs font-medium uppercase tracking-wider text-gold-ink">
+                <MapPin className="h-3.5 w-3.5 shrink-0" />
+                <span>Zona {i + 1}</span>
               </div>
+              <h2 className="mt-3 font-display text-xl font-semibold text-foreground">
+                {z.nombre}
+              </h2>
+              <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
+                {z.descripcion}
+              </p>
+              <AffiliateButton
+                href={affiliateLink(z.query, {
+                  dest_id: z.destId,
+                  dest_type: "landmark",
+                  order: "distance_from_search",
+                })}
+                className="mt-5 w-full"
+              >
+                Ver alojamientos en Booking
+              </AffiliateButton>
             </article>
           ))}
         </div>
 
         <p className="mt-10 text-xs leading-relaxed text-muted-foreground">
-          Los alojamientos mostrados son ejemplos orientativos y los precios son
-          aproximados. Consulta disponibilidad y condiciones actualizadas en
+          Consulta precios, disponibilidad y condiciones actualizadas en
           Booking.com. Los botones contienen enlaces de afiliado.
         </p>
       </Section>

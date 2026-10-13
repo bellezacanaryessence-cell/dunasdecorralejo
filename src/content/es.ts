@@ -7,10 +7,6 @@
  * Los componentes leen el contenido con `useContent()`, nunca textos
  * escritos a mano.
  */
-import hotel1 from "@/assets/hotel-1.jpg";
-import hotel2 from "@/assets/hotel-2.jpg";
-import hotel3 from "@/assets/hotel-3.jpg";
-import hotel4 from "@/assets/hotel-4.jpg";
 import grandesPlayas from "@/assets/grandes-playas.jpg";
 import popcornBeach from "@/assets/popcorn-beach.jpg";
 import elCotillo from "@/assets/el-cotillo.jpg";
@@ -41,43 +37,30 @@ export const es = {
     ctaNote: "Enlace de afiliado · Precios y disponibilidad en Booking.com",
   },
 
-  /** Hoteles y apartamentos de ejemplo. Edita libremente esta lista. */
-  hoteles: [
+  /**
+   * Zonas para alojarse en Corralejo. Cada botón abre en Booking una
+   * búsqueda ordenada por cercanía a un punto de interés de la zona
+   * (dest_id de Booking, tipo "landmark").
+   */
+  zonas: [
     {
-      nombre: "Hotel Dunas Beach & Spa",
-      zona: "Primera línea · Grandes Playas",
+      nombre: "Centro y puerto",
       descripcion:
-        "Resort de cuatro estrellas frente a las dunas, con piscinas climatizadas, spa y acceso directo a la playa. Ideal para familias y estancias largas.",
-      precio: "desde 120 € / noche",
-      imagen: hotel1,
-      query: "Hotel Grandes Playas Corralejo",
+        "Para quien quiere restaurantes, ambiente y salir andando a todo.",
+      query: "Playa de Corralejo Viejo",
+      destId: "900137256",
     },
     {
-      nombre: "Apartamentos Vista Lobos",
-      zona: "Centro de Corralejo",
-      descripcion:
-        "Apartamentos luminosos con cocina y terraza mirando a Isla de Lobos, a cinco minutos a pie del puerto y de los restaurantes del casco antiguo.",
-      precio: "desde 75 € / noche",
-      imagen: hotel2,
-      query: "Apartamentos centro Corralejo",
+      nombre: "Junto a las Grandes Playas y las dunas",
+      descripcion: "Para quien quiere playa y naturaleza.",
+      query: "Parque Natural de Corralejo",
+      destId: "900137259",
     },
     {
-      nombre: "Casa Majanicho Boutique",
-      zona: "Zona tranquila · Norte",
-      descripcion:
-        "Pequeño hotel boutique de piedra volcánica con patio, solárium y solo diez habitaciones. Perfecto para parejas que buscan silencio.",
-      precio: "desde 98 € / noche",
-      imagen: hotel3,
-      query: "Hotel boutique Corralejo",
-    },
-    {
-      nombre: "Casa Sal Surf Guesthouse",
-      zona: "Cerca del puerto",
-      descripcion:
-        "Alojamiento informal para surfistas y kiters, con azotea al atardecer, almacén de tablas y ambiente internacional a precio ajustado.",
-      precio: "desde 45 € / noche",
-      imagen: hotel4,
-      query: "Surf hostel Corralejo",
+      nombre: "Zona tranquila (Bristol y alrededores)",
+      descripcion: "Para familias y quien busca calma.",
+      query: "Playa del Charco de Bristol",
+      destId: "900137255",
     },
   ],
 
